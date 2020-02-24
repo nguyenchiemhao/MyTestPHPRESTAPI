@@ -18,3 +18,9 @@ Route::get('/hello', function () {
         'data' => 'Hello',
     ])->header('Access-Control-Allow-Origin', '*');
 });
+
+Route::post('/receiver', function (Request $request) {
+    return response()->json([
+        'data' => $request->all(),
+    ])->header('Access-Control-Allow-Origin', '*');
+});
